@@ -1,8 +1,10 @@
-/*body {
-  padding-top: 50px;
-}*/
+/* CSS Document */
 
 /* Top navigation bar */
+header{
+    padding-top:5px;
+    margin-bottom:5px;
+}
 header .rlo_title{
     padding-top:5px;
     font-size:180%;
@@ -25,6 +27,9 @@ article h1{
 }
 
 /* Previous & Next buttons within text container */
+nav.section_nav{
+    padding:10px 10px;
+}
 nav.section_nav ul{
     list-style:none;
     padding:0;
