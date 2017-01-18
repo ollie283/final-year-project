@@ -1,6 +1,7 @@
 body {
   padding-top: 50px;
 }
+/* Main content text container */
 article{
   clear:both;
   padding-top:10px;
@@ -8,4 +9,10 @@ article{
   border-radius:10px 10px 10px 10px ;
   margin-top:10px;
   padding:10px;
+}
+/* Previous & Next buttons with text container */
+nav.section_nav ul{
+    list-style:none;
+    padding:0;
+    margin:0;
 }
