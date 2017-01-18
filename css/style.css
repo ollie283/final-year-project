@@ -10,6 +10,11 @@ article{
   margin-top:10px;
   padding:10px;
 }
+article h1{
+    margin-top:10px;
+    border-bottom:1px solid #3276B1;
+}
+
 /* Previous & Next buttons with text container */
 nav.section_nav ul{
     list-style:none;
