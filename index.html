@@ -26,13 +26,30 @@
   <body>
 
     <div class="container" id="main_container">
-
+        <!-- Top Nav-Bar -->
         <header class="clearfix" role="banner">
             <img src="img/essex.png" alt="University of Essex" width="144" height="59" id="university_logo"
                  class="pull-right">
             <p class="rlo_title">Data Structures & Algorithms</p>
         </header>
 
+        <nav class="nav nav-pills hidden-xs" role="navigation" id="main_nav">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown">
+                    Contents <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="active"><a href="index.html">What is Data Structures & Algorithms?</a></li>
+                    <li><a href="2.html">Page 2</a></li>
+            </div>
+            <a href="#" class="btn btn-primary disabled btn-sm"><span class="glyphicon glyphicon-circle-arrow-left"></span>
+                Previous </a>
+            <a href="2.html" id="next_btn" class="btn btn-primary btn-sm">Next <span
+                    class="glyphicon glyphicon-circle-arrow-right"></span></a>
+
+        </nav>
+
+        <!-- Main Content Area -->
         <main role="main">
             <article>
                 <a id="content_start"></a>
@@ -57,6 +74,7 @@
             </article>
         </main>
 
+        <!-- Footer -->
         <footer role="contentinfo">
             <div class="row">
                 <div class="col-md-6">
