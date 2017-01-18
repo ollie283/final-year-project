@@ -1,6 +1,14 @@
 body {
   padding-top: 50px;
 }
+
+/* Top navigation bar */
+header .rlo_title{
+    padding-top:5px;
+    font-size:180%;
+    margin-bottom:0;
+}
+
 /* Main content text container */
 article{
   clear:both;
@@ -16,7 +24,7 @@ article h1{
     border-bottom:1px solid #3276B1;
 }
 
-/* Previous & Next buttons with text container */
+/* Previous & Next buttons within text container */
 nav.section_nav ul{
     list-style:none;
     padding:0;
