@@ -6,7 +6,8 @@ article{
   clear:both;
   padding-top:10px;
   border:2px solid #3276B1;
-  border-radius:10px 10px 10px 10px ;
+  border-bottom:none;
+  border-radius:10px 10px 0 0 ;
   margin-top:10px;
   padding:10px;
 }
@@ -20,4 +21,19 @@ nav.section_nav ul{
     list-style:none;
     padding:0;
     margin:0;
+}
+
+/* Footer */
+footer{
+    background-color:#000;
+    color:#fff;
+    padding:20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom:10px;
+}
+footer ul{
+    margin:0;
+    padding:0;
+    list-style:none;
 }
