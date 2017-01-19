@@ -47,8 +47,23 @@
                 Previous </a>
             <a href="2.html" id="next_btn" class="btn btn-primary btn-sm">Next <span
                     class="glyphicon glyphicon-circle-arrow-right"></span></a>
-
         </nav>
+
+        <!-- Renders drop-down menu for smaller screen resolutions -->
+        <div class="visible-xs-block" id="small_screen_menu_container">
+            <p class="rlo_title">Data Structures & Algorithms</p>
+            <p><a class="btn btn-primary btn-block" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+                  aria-controls="collapseExample" id="toggle_ss_nav">
+                Toggle Navigation <span class="glyphicon glyphicon-remove glyphicon-menu-hamburger"
+                                        aria-hidden="true"></span></a></p>
+            <div class="collapse" id="collapseExample">
+                <ul class="btn-group btn-group-vertical center-block" role="menu" id="small_screen_menu">
+                    <li><a href="index.html" class="btn btn-info btn-block active">What is Data Structures & Algorithms?</a>
+                    </li>
+                    <li><a href="2.html" class="btn btn-info btn-block">Page 2</a></li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Main Content Area -->
         <main role="main">
