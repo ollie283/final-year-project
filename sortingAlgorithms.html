@@ -86,7 +86,15 @@
                 <div class="row">
                     <div class="col-md-6" id="text-component">
 
-                        <p>Sorting Algorithms content...</p>
+                        <p>Sorting is one of the oldest and most well studied problems in computing. For most general
+                            internal sorting applications, an insertion sort, bubble sort, or quicksort is the
+                            method of choice. The decision regarding which to use depends on the size of the input
+                            and on the underlying environment.</p>
+                        <h3>Divide & Conquer</h3>
+                        <p>We can apply the principle of <a href="#" data-toggle="modal" data-target="#gloss_divide">divide & conquer</a>
+                            to the problem of sorting a collection of objects. If the collection is small, sorting can be
+                            performed trivially. Otherwise we split the collection into two smaller collections and sort
+                            these separately. This will produce two sorted lists which must then be merged to produce the final result. </p>
 
                     </div>
                 </div>
@@ -134,11 +142,25 @@
                 </div>
             </div>
         </footer>
-
-
     </div>
 
-
+  <!-- START Glossary Modals -->
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gloss_divide_label" id="gloss_divide">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="gloss_divide_label">Divide & Conquer</h3>
+              </div>
+              <div class="modal-body">
+                  <p>The principle of divide and conquer states that a large problem should be broken down into two or
+                      more smaller problems to be solved separately before combining their solutions.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
