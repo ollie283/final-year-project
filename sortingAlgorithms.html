@@ -90,13 +90,53 @@
                             internal sorting applications, an insertion sort, bubble sort, or quicksort is the
                             method of choice. The decision regarding which to use depends on the size of the input
                             and on the underlying environment.</p>
+
                         <h3>Divide & Conquer</h3>
+
                         <p>We can apply the principle of <a href="#" data-toggle="modal" data-target="#gloss_divide">divide & conquer</a>
                             to the problem of sorting a collection of objects. If the collection is small, sorting can be
                             performed trivially. Otherwise we split the collection into two smaller collections and sort
-                            these separately. This will produce two sorted lists which must then be merged to produce the final result. </p>
+                            these separately. This will produce two sorted lists which must then be merged to produce the final result.
+                            We express the divide and conquer approach to sorting a list in pseudo-code on the right hand slide.</p>
+
+                        <p>A number of different sorting algorithms can be obtained by using different techniques for
+                            splitting the list into two smaller lists. </p>
+
+                        <p>In the <font color="red"><b><i>easy-split hard-merge</i></b></font> approach we make the splitting
+                            as simple as possible – most of the work will then be done in merging the sorted lists.</p>
+
+                        <p>In the <font color="red"><b><i>hard-split easy-merge</i></b></font> approach we split the list into small elements and large elements
+                            so that every object in the sorted list <font color="blue"><b>s1</b></font> will be smaller than any object in
+                            <font color="blue"><b>s2</b></font> - merging then simply involves the concatenation of the two sorted lists</p>
 
                     </div>
+
+                    <div class="col-md-6" id="rightText-component">
+                        <p>In both approaches we can choose to split a list containing <i>n</i> elements into two smaller lists of (approximately)
+                            equal size or one list of size <i>n</i>-1 and one list of size 1. The former approach will give O(<i>n</i> log <i>n</i>) time as long
+                            as the splitting and merging can be done in O(<i>n</i>) time. The latter approach has the advantage that the sorting of
+                            the list of size 1 is trivial so only one recursive call is needed (and it will be possible to
+                            rewrite the programs using a loop instead of recursion).</p>
+                    </div>
+
+                    <!-- START code column -->
+                    <div class="col-md-6" id="code-component">
+                      <pre><p>static List sort(List l)
+{ if (l <i>is small</i>)
+    { <i>sort</i> l <i>by simple method
+      return sorted list</i>
+    }
+    else
+    { <i>split</i> l <i>into two smaller lists</i> l1 <i>and</i> l2
+      List s1 = sort(l1);
+      List s2 = sort(l2);
+      <i>merge</i> s1 <i>and</i> s2
+      <i>return merged list</i>
+    }
+}
+</p></pre>
+                    </div>
+                    <!-- END code column -->
                 </div>
 
                 <nav class="section_nav" role="navigation">
