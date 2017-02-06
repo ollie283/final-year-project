@@ -86,9 +86,38 @@
                 <div class="row">
                     <div class="col-md-6" id="text-component">
 
-                        <p>Insertion sort is appropriate for very small amounts of input</p>
+                        <p>The first algorithm we consider uses the easy-split hard-merge approach with smaller lists of
+                            size 1 and <i>n</i>-1. After sorting the list of size <i>n</i>-1, the merging involves inserting
+                            the single element from the list of size 1 into the sorted list in the correct position.
+                            Insertion sort is appropriate for very small amounts of input.</p>
+
+                        <p>We present the code in a recursive style as a generic method with an argument of type <code>List&lt;T&gt;</code>;
+                            – the type <code>&lt;T&gt;</code> must implement the <code>Comparable</code> interface so we
+                            need to use a bounded type parameter.</p>
+
+                        <p>If the list to be sorted is large it would be more efficient to create a list of appropriate
+                            capacity for the result before calling the method, and supply this as an extra argument.</p>
 
                     </div>
+
+                    <div class="col-md-6" id="rightText-component">
+                        <p>Right hand text</p>
+                    </div>
+
+                    <!-- START code column -->
+                    <div class="col-md-6" id="code-component">
+                        <pre><p>public static &lt;T extends Comparable&lt;T&gt;&gt; List&lt;T&gt; iSort(List&lt;T&gt; l) {
+    if (l.size()<2)
+        return new ArrayList<code> List&lt;T&gt;</code>(l);
+    else {
+        <code>List&lt;T&gt;</code> s = iSort(l.subList(1, l.size()));
+        int n = 0;
+        while (n < s.size() && l.get(0).compareTo(s.get(n)) > 0) n++;
+        s.add(n, l.get(0)); <i>// add at location n</i>
+        return s;
+    }
+}
+</p></pre>
                 </div>
 
                 <nav class="section_nav" role="navigation">
