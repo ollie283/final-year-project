@@ -88,20 +88,28 @@
 
                         <p>The first algorithm we consider uses the easy-split hard-merge approach with smaller lists of
                             size 1 and <i>n</i>-1. After sorting the list of size <i>n</i>-1, the merging involves inserting
-                            the single element from the list of size 1 into the sorted list in the correct position.
-                            Insertion sort is appropriate for very small amounts of input.</p>
+                            the single element from the list of size 1 into the sorted list in the correct position.</p>
 
-                        <p>We present the code in a recursive style as a generic method with an argument of type <code>List&lt;T&gt;</code>;
-                            – the type <code>&lt;T&gt;</code> must implement the <code>Comparable</code> interface so we
+                        <p>We present the code in a recursive style as a generic method with an argument of type<code>List&lt;T&gt;</code>;
+                            – the type<code>&lt;T&gt;</code>must implement the<code>Comparable</code>interface so we
                             need to use a bounded type parameter.</p>
 
                         <p>If the list to be sorted is large it would be more efficient to create a list of appropriate
                             capacity for the result before calling the method, and supply this as an extra argument.</p>
 
+                        <p>The average number of iterations for the while loop for a list of size <i>n</i>. will be about <i>n</i>/2 and
+                            in the worst case the number will be <i>n</i>. Since the time for the loop body is O(1) we can conclude
+                            that the time for the loop is O(<i>n</i>). The addition of the element to the list will also take O(<i>n</i>)
+                            time in the average and worst cases.</p>
+
+                        <p>We hence obtain the recurrence relation T(<i>n</i>) ≤ T1+T(n-1) where T1 is O(<i>n</i>) so we can conclude
+                            that the average and worst case running times for insertion sort are O(<i>n</i><sup>2</sup>).</p>
                     </div>
 
                     <div class="col-md-6" id="rightText-component">
-                        <p>Right hand text</p>
+                        <p>With the code presented here the time in the best case will also be O(<i>n</i><sup>2</sup>), but with a linked
+                            list version (efficiently coded using list cells instead of the <code>LinkedList</code> class) if all
+                            insertions were near the beginning of the list we would get O(<i>n</i>) performance.</p>
                     </div>
 
                     <!-- START code column -->
@@ -118,6 +126,15 @@
     }
 }
 </p></pre>
+                        <p>Note that although we decided to return an object of type<code>ArrayList&lt;T&gt;</code>, the argument type had
+                            to be<code>&lt;T&gt;</code>since the argument for the recursive call is the result of a call to the subList
+                            method and the return type of this method is<code>&lt;T&gt;</code>.</p>
+
+                        <p>We could have chosen to write a method that returns a linked list; however since the time complexity
+                            of the <code>get</code> method for linked lists is O(<i>n</i>) rather than O(1), simply replacing
+                            <code>ArrayList&lt;T&gt;</code>by<code>LinkedList&lt;T&gt;</code>would result in the time
+                            for the while loop being O(<i>n</i><sup>2</sup>) instead of O(<i>n</i>). Additionally the <code>subList</code> method
+                            is more efficient when applied to an <code>ArrayList</code> object.</p>
                 </div>
 
                 <nav class="section_nav" role="navigation">
@@ -158,7 +175,9 @@
                 </div>
 
                 <div class="col-md-6 text-right">
-                    <p>Page last updated: 19th January 2017</p>
+                    <script language="Javascript">
+                        document.write("This page was last modified on: " + document.lastModified +"");
+                    </script>
                 </div>
             </div>
         </footer>
