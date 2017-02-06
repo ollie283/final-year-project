@@ -86,10 +86,72 @@
                 <div class="row">
                     <div class="col-md-6" id="text-component">
 
-                        <p>Quicksort does not by itself provide this worst-case guarantee and is tricky
-                            to code. However, it has almost certain O(N logN) performance</p>
+                        <p>Tt is possible to produce a hard-split easy-merge method whose average time for large lists
+                            is  <a href="#" data-toggle="modal" data-target="#gloss_o"> O(<i>n</i> log <i>n</i>)</a>.
+                            This algorithm, invented by Hoare in 1962, is known as <b><i>quicksort</i></b>.</p>
+
+                        <p>Splitting involves producing a list containing all items less than or equal to a particular
+                            value, called the pivot, and another list containing all items greater than the
+                            <a href="#" data-toggle="modal" data-target="#gloss_pivot"> <b><i>pivot</i></b></a>.</p>
+
+                        <p>To ensure that the list is not split into sub-lists of size 0 and n, the pivot must not be
+                            the largest element in the list, so care must be taken if the fragment contains duplicate
+                            elements. If all of the items in the fragment are equal we have to look at another fragment.</p>
+
+                        <p>Having chosen a pivot we use two cursors, starting at each end of the list. The left cursor
+                            is incremented until an item greater than the pivot is encountered and the right cursor is
+                            decremented until an item less than or equal to the pivot is reached. Having found these two
+                            items we swap them and advance the cursors. Having done this all items to the left of the left
+                            cursor will be less than or equal to the pivot and all items to the right of the right cursor
+                            will be greater than the pivot.</p>
+
+                        <p>This process is repeated until the two cursors have advanced past each other. The meeting point
+                            is the point at which the list should be split.</p>
 
                     </div>
+
+                    <div class="col-md-6" id="rightText-component">
+                        <p>Presented below is an outline of the code for quicksort using an array of items of type<code>int</code>.
+                            We need to supply two numeric arguments – the start and end locations of the array fragment
+                            that is to be sorted</p>
+
+                        <p>A calling method can be written to supply the values for these locations for the first call:</p>
+                    </div>
+
+                    <!-- START code column -->
+                    <div class="col-md-6" id="code-component">
+                        <pre><p>public static void quickSort(int[] l) {
+    if (l.length > 1) qSort(l, 0, l.length - 1);
+}
+</p></pre>
+                        <pre><p>public static void qSort(int[] l, int start, int end) {
+    if (end>start) {
+        int pivot = <i>// select appropriate pivot</i>
+        int lo = start, hi = end;
+        do {
+            while (l[lo] <= pivot) lo++;
+            while (l[hi] > pivot) hi--;
+            if (lo < hi) {
+                int tmp = l[lo];
+                l[lo] = l[hi];
+                l[hi] = tmp;
+                lo++;
+                hi--;
+            }
+        } while (lo < hi);
+        qSort(l, start, hi);
+        qSort(l, lo, end);
+    }
+}
+</p></pre>
+                        <p>It is not difficult to see that for an array fragment of size <i>n</i> the time for the do loop is O(<i>n</i>).
+                            In the worst case, where the pivot is the smallest or second-largest value in the fragment,
+                            the list may be split into sub-lists of size <i>n</i>-1 and 1. The recursive call to the sub-list of
+                            size 1 will take constant time so we obtain a recurrence relation of the form T(<i>n</i>) ≤ T1+T(<i>n</i>-1)
+                            where T1 is O(<i>n</i>). Hence in the worst case quicksort takes O(<i>n</i><sup>2</sup>) time.
+                            <a href="#" data-toggle="modal" data-target="#gloss_however"> However...</a></p>
+                    </div>
+
                 </div>
 
                 <nav class="section_nav" role="navigation">
@@ -137,13 +199,68 @@
                 </div>
             </div>
         </footer>
-
-
     </div>
 
+  <!-- START Glossary Modals -->
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gloss_O(n)_label" id="gloss_o">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="gloss_O(n)_label">O(<i>n</i> log <i>n</i>)</h3>
+              </div>
+              <div class="modal-body">
+                  <p>To obtain a hard-spilt easy-merge sorting method whose worstcase running time is O(<i>n</i> log <i>n</i>)) we
+                      would have to split the list into two equal-sized sub-lists, containing the smaller and larger
+                      halves of the array, and perform this splitting in O(<i>n</i>) time. To do this we would have to determine
+                      the middle value of the sorted list. Since there is no way of doing this without sorting at least
+                      half of the list, the splitting cannot be performed in O(<i>n</i>) time.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gloss_pivot_label" id="gloss_pivot">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="gloss_pivot_label">Pivot</h3>
+              </div>
+              <div class="modal-body">
+                  <p>For an optimum split the pivot should be the middle item of the sorted list, but since we cannot
+                      determine this efficiently, Hoare suggested the selection of the middle-valued item from a small
+                      fixed-size fragment of the list. </p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gloss_however_label" id="gloss_however">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="gloss_however_label">However...</h3>
+              </div>
+              <div class="modal-body">
+                  <p> For large random arrays we can expect the average sizes of the sub-lists to be about <i>n</i>/3 and
+                      2<i>n</i>/3 and it can be shown by advanced analysis that the average performance is O(<i>n</i> log <i>n</i>). Indeed,
+                      for large lists, the average time for quicksort is better than for any other known generic sorting algorithm.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
