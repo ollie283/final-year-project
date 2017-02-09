@@ -295,6 +295,8 @@
         // END randomise the order of the activities
 
         $('#act_drag_items').randomize();
+        $(".draggable").draggable({revert: true, cursor: "move", opacity: 0.8});
+        $(".drop_target").droppable({drop: handle_label_drop, hoverClass: "drop-hover"});
     });
 
 </script>
