@@ -35,6 +35,9 @@
           .act_drag_ms{
               background:#FFCC66;
           }
+          .act_drag_bbs{
+              background:#99CCCC;
+          }
           .droppable_area ul{
               background:#E6FFFF;
               padding-top:20px;
@@ -43,7 +46,17 @@
           .droppable_area ul li{
               visibility:hidden;
           }
-
+          #act_drag_items{
+              text-align:center;
+          }
+          #act_drag_items li{
+              display:inline-block;
+              border:1px solid #666;
+              border-radius:5px;
+              padding:5px;
+              margin-bottom:10px;
+              margin-left:10px;
+          }
       </style>
 
 
@@ -147,6 +160,7 @@
                                         <ul>
                                             <li class="activity_qs">Quick Sort</li>
                                             <li class="activity_ss">Selection Sort</li>
+                                            <li class="activity_bbs">Bubble Sort</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -165,6 +179,7 @@
                                 <li class="act_drag_ms draggable" data-activity="Easy-split_Hard-merge" data-class="activity_ms">Merge Sort</li>
                                 <li class="act_drag_qs draggable" data-activity="Hard-split_Easy-merge" data-class="activity_qs">Quick Sort</li>
                                 <li class="act_drag_ss draggable" data-activity="Hard-split_Easy-merge" data-class="activity_ss">Selection Sort</li>
+                                <li class="act_drag_bbs draggable" data-activity="Hard-split_Easy-merge" data-class="activity_bbs">Bubble Sort</li>
                                 <li class="act_drag_bs draggable" data-activity="not-a-sorting-algorithm" data-class="activity_bs">Balanced Sort</li>
                                 <li class="act_drag_rs draggable" data-activity="not-a-sorting-algorithm" data-class="activity_rs">Roulette Sort</li>
                             </ul>
