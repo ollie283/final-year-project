@@ -5,6 +5,7 @@
 
 $(function () {
 
+    var message = '';
     $('#feedback_error').hide();
     $('#feedback_success').hide();
 
@@ -49,7 +50,18 @@ $(function () {
         var label_value = ui.draggable.data('activity');
         $('#feedback_error').hide();
         $('#feedback_success').hide();
-        
+
+        if (drop_target_value == label_value) {
+
+            //alert('match');
+            ui.draggable.hide();
+
+            $('.' + ui.draggable.data('class')).css("visibility", "visible");
+
+
+    } else {
+            //incorrect match
+        }
     }
 });
 
