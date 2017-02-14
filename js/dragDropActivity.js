@@ -85,9 +85,14 @@ $(function () {
             $('#feedback_success').html('<span class="glyphicon glyphicon-tick"></span> Correct! ' + message + '');
             $('#feedback_success').show();
 
+            ui.draggable.position({of: $(this), my: '50% 50%', at: '50% 50%'});
 
-    } else {
-            //incorrect match
+        } else {
+            //No match
+            ui.draggable.draggable('option', 'revert', true);
+
+            $('#feedback_error').html('<span class="glyphicon glyphicon-remove"></span> Incorrect! Try again.');
+            $('#feedback_error').show();
         }
     }
 });
