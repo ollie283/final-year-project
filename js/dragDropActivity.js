@@ -58,6 +58,31 @@ $(function () {
 
             $('.' + ui.draggable.data('class')).css("visibility", "visible");
 
+            switch (ui.draggable.data('class')) {
+                case 'activity_ms':
+                    message = 'Merge Sort uses the easy-split hard-merge approach.';
+                    break;
+                case 'activity_is':
+                    message = 'Insertion Sort uses the easy-split hard-merge approach.';
+                    break;
+                case 'activity_qs':
+                    message = 'Quick Sort uses the hard-split easy-merge approach.';
+                    break;
+                case 'activity_ss':
+                    message = 'Selection Sort uses the hard-split easy-merge approach.';
+                    break;
+                case 'activity_bbs':
+                    message = 'Bubble Sort uses the hard-split easy-merge approach.';
+                    break;
+                case 'activity_bs':
+                    message = 'Balanced Sort is not a Sorting Algorithm';
+                    break;
+                case 'activity_rs':
+                    message = 'Roulette Sort is not a Sorting Algorithm';
+                    break;
+            }
+
+
 
     } else {
             //incorrect match
