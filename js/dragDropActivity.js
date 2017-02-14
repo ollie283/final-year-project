@@ -5,6 +5,7 @@
 
 $(function () {
 
+    var count = 0;
     var message = '';
     $('#feedback_error').hide();
     $('#feedback_success').hide();
@@ -56,6 +57,7 @@ $(function () {
             //alert('match');
             ui.draggable.hide();
 
+            $(this).addClass('correct');
             $('.' + ui.draggable.data('class')).css("visibility", "visible");
 
             switch (ui.draggable.data('class')) {
@@ -84,6 +86,12 @@ $(function () {
 
             $('#feedback_success').html('<span class="glyphicon glyphicon-tick"></span> Correct! ' + message + '');
             $('#feedback_success').show();
+            count++;
+
+            // If all the cards have been placed correctly then display a message
+            if (count == 7) {
+                $('#activity_complete').modal('show');
+            }
 
             ui.draggable.position({of: $(this), my: '50% 50%', at: '50% 50%'});
 
@@ -96,4 +104,3 @@ $(function () {
         }
     }
 });
-
