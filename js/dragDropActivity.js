@@ -82,6 +82,8 @@ $(function () {
                     break;
             }
 
+            $('#feedback_success').html('<span class="glyphicon glyphicon-tick"></span> Correct! ' + message + '');
+            $('#feedback_success').show();
 
 
     } else {
