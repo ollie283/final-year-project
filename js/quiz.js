@@ -39,6 +39,14 @@ $(document).ready(function () {
             '<div><label for="answer_2"><input name="answer" id="answer_2" type="radio" value="3" /> ' + questions[current_question][4] + '</label></div>' +
             '<div><label for="answer_3"><input name="answer" id="answer_3" type="radio" value="4" /> ' + questions[current_question][5] + '</label></div>' +
             '</div></div>').hide().toggle(500);
+
+        // re-label the continue button
+        $('#continue_btn').attr('value', 'Check Your Answer');
+
+        // Enable the submit / continue button when radio button is selected
+        $("#question_container :radio").click(function (event) {
+            $('#continue_btn').attr("disabled", false);
+        });
     }
 
     $('#question_form').submit(function () {
