@@ -64,7 +64,8 @@ $(document).ready(function () {
             $('.answer_feedback').hide().toggle(500);
             number_of_correct_answers++;
         } else {
-            //incorrect
+            $('#question_container').append('<p class="answer_feedback"><span class="label label-danger">That is Incorrect <span class="glyphicon glyphicon-remove"></span></span> ' + questions[current_question][7] + '</p>')
+
         }
     }
 
