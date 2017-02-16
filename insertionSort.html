@@ -98,7 +98,8 @@
                             capacity for the result before calling the method, and supply this as an extra argument.</p>
 
                         <p>The average number of iterations for the while loop for a list of size <i>n</i>. will be about <i>n</i>/2 and
-                            in the worst case the number will be <i>n</i>. Since the time for the loop body is O(1) we can conclude
+                            in the worst case the number will be <i>n</i>. Since the time for the loop body is
+                            <a href="#" data-toggle="modal" data-target="#gloss_o1">O(1)</a> we can conclude
                             that the time for the loop is O(<i>n</i>). The addition of the element to the list will also take O(<i>n</i>)
                             time in the average and worst cases.</p>
 
@@ -181,9 +182,25 @@
                 </div>
             </div>
         </footer>
-
-
     </div>
+
+  <!-- START Glossary Modals -->
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gloss_o1_label" id="gloss_o1">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="gloss_o1_label">O(1)</h3>
+              </div>
+              <div class="modal-body">
+                  <p>The auxiliary space of insertion sort is O(1), It means the amount of extra memory Insertion Sort
+                      consumes doesn't depend on the input.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
     <!-- Bootstrap core JavaScript
