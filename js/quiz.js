@@ -65,8 +65,17 @@ $(document).ready(function () {
             number_of_correct_answers++;
         } else {
             $('#question_container').append('<p class="answer_feedback"><span class="label label-danger">That is Incorrect <span class="glyphicon glyphicon-remove"></span></span> ' + questions[current_question][7] + '</p>')
-
         }
+        // disable the continue btn
+        $("#question_container :radio").attr("disabled", true);
+
+        // re-label the continue button
+        $('#continue_btn').attr('value', 'Continue');
+        $('#continue_btn').attr('class', 'btn btn-success');
+
+        // log data in variables
+        check_answer = 0;
+        current_question++;
     }
 
     $('#question_form').submit(function () {
