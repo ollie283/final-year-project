@@ -40,13 +40,32 @@ $(document).ready(function () {
             '<div><label for="answer_3"><input name="answer" id="answer_3" type="radio" value="4" /> ' + questions[current_question][5] + '</label></div>' +
             '</div></div>').hide().toggle(500);
 
+        check_answer = 1;
+
         // re-label the continue button
         $('#continue_btn').attr('value', 'Check Your Answer');
+        $('#continue_btn').attr('class', 'btn btn-warning');
 
         // Enable the submit / continue button when radio button is selected
         $("#question_container :radio").click(function (event) {
             $('#continue_btn').attr("disabled", false);
         });
+    }
+
+    function check_answers() {
+        // function to check the answer supplied
+
+        // store the supplied answer
+        var supplied_answer = $('#question_container :radio:checked').val();
+
+        // check against array
+        if (supplied_answer == questions[current_question][1]) {
+            $('#question_container').append('<p class="answer_feedback"><span class="label label-success">That is Correct <span class="glyphicon glyphicon-ok"></span></span> ' + questions[current_question][6] + '</p>');
+            $('.answer_feedback').hide().toggle(500);
+            number_of_correct_answers++;
+        } else {
+            //incorrect
+        }
     }
 
     $('#question_form').submit(function () {
@@ -60,7 +79,7 @@ $(document).ready(function () {
                 write_question();
             }
         } else {
-            //function to check answers;
+            check_answers();
         }
 
         return false;
