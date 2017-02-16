@@ -37,9 +37,27 @@ $(document).ready(function () {
             '<input name="answer" id="answer_0" type="radio" value="1" /> ' + questions[current_question][2] + '</label></div>' +
             '<div><label for="answer_1"><input name="answer" id="answer_1" type="radio" value="2" /> ' + questions[current_question][3] + '</label></div>' +
             '<div><label for="answer_2"><input name="answer" id="answer_2" type="radio" value="3" /> ' + questions[current_question][4] + '</label></div>' +
-            '<div><label for="answer_1"><input name="answer" id="answer_3" type="radio" value="4" /> ' + questions[current_question][5] + '</label></div>' +
+            '<div><label for="answer_3"><input name="answer" id="answer_3" type="radio" value="4" /> ' + questions[current_question][5] + '</label></div>' +
             '</div></div>').hide().toggle(500);
     }
+
+    $('#question_form').submit(function () {
+        // form submission logic
+        // triggers the appropriate function
+
+        if (check_answer == 0) {
+            if (current_question >= num_of_questions) {
+                //function to display results;
+            } else {
+                write_question();
+            }
+        } else {
+            //function to check answers;
+        }
+
+        return false;
+
+    });
 
 
 });
