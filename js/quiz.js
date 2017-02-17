@@ -16,6 +16,9 @@ $(document).ready(function () {
         "It is O(n^2) in all cases.", "It is O(n log n) on average but O(n^2) in the worst case.", "It is O(n) in the best case but O(n^2) in the worst case.",
         "Correct. Insertion Sort is O(n) in the best case but O(n^2) in the average and worst case.", "Incorrect. Insertion Sort is O(n) in the best case but O(n^2) in the average and worst case.");
 
+    questions[2] = new Array("Who invented the Quick Sort Algorithm in 1962?", "2", "Primrose", "Hoare", "Stark", "Blair", "Correct. The Quick Sort Algorithm was invented by Hoare in 1962.",
+        "Incorrect. The Quick Sort Algorithm was invented by Hoare in 1962.")
+
     var num_of_questions = questions.length;
 
     $('#quiz_container').html('');
