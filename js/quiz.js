@@ -17,7 +17,11 @@ $(document).ready(function () {
         "Correct. Insertion Sort is O(n) in the best case but O(n^2) in the average and worst case.", "Incorrect. Insertion Sort is O(n) in the best case but O(n^2) in the average and worst case.");
 
     questions[2] = new Array("Who invented the Quick Sort Algorithm in 1962?", "2", "Primrose", "Hoare", "Stark", "Blair", "Correct. The Quick Sort Algorithm was invented by Hoare in 1962.",
-        "Incorrect. The Quick Sort Algorithm was invented by Hoare in 1962.")
+        "Incorrect. The Quick Sort Algorithm was invented by Hoare in 1962.");
+
+    questions[3] = new Array("Assume that we use Bubble Sort to sort n distinct elements in ascending order. When does the best case of Bubble Sort occur?", "2",
+        "There is no best case for Bubble Sort. It always takes O(n*n) time", "When elements are sorted in ascending order", "When elements are sorted in descending order", "When elements are not sorted by any order",
+        "Correct. When the list is already sorted (best-case), the complexity of bubble sort is only O(n).", "Incorrect. When the list is already sorted (best-case), the complexity of bubble sort is only O(n).");
 
     var num_of_questions = questions.length;
 
