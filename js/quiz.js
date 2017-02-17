@@ -23,6 +23,10 @@ $(document).ready(function () {
         "There is no best case for Bubble Sort. It always takes O(n*n) time", "When elements are sorted in ascending order", "When elements are sorted in descending order", "When elements are not sorted by any order",
         "Correct. When the list is already sorted (best-case), the complexity of bubble sort is only O(n).", "Incorrect. When the list is already sorted (best-case), the complexity of bubble sort is only O(n).");
 
+    questions[4] = new Array("Which of the following is TRUE relating to the time complexity of the Quick Sort algorithm when used to sort a list of size n?", "3",
+        "It is O(n log n) in all cases.", "It is O(n^2) in all cases.", "It is O(n log n) on average but O(n^2) in the worst case.", "It is O(n) in the best case but O(n^2) in the worst case.",
+        "Correct. Quick Sort is O(n log n) on average but O(n^2) in the worst case.", "Incorrect. Quick Sort is O(n log n) on average but O(n^2) in the worst case.");
+
     var num_of_questions = questions.length;
 
     $('#quiz_container').html('');
