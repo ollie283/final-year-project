@@ -27,6 +27,11 @@ $(document).ready(function () {
         "It is O(n log n) in all cases.", "It is O(n^2) in all cases.", "It is O(n log n) on average but O(n^2) in the worst case.", "It is O(n) in the best case but O(n^2) in the worst case.",
         "Correct. Quick Sort is O(n log n) on average but O(n^2) in the worst case.", "Incorrect. Quick Sort is O(n log n) on average but O(n^2) in the worst case.");
 
+    questions[5] = new Array("The auxiliary space of insertion sort is O(1), what does O(1) mean?", "4", "The memory (space) required to process the data is not constant.", "It takes only 1 kb of memory.",
+        "It is the speed at which the elements are traversed.", "It means the amount of extra memory Insertion Sort consumes doesn't depend on the input. The algorithm should use the same amount of memory for all inputs.",
+        "Correct. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.",
+        "Incorrect. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.");
+
     var num_of_questions = questions.length;
 
     $('#quiz_container').html('');
