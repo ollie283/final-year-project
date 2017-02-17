@@ -32,6 +32,11 @@ $(document).ready(function () {
         "Correct. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.",
         "Incorrect. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.");
 
+    questions[6] = new Array("What is recurrence for worst case of QuickSort and what is the time complexity in Worst case?", "2", "Recurrence is T(n) = T(n-2) + O(n) and time complexity is O(n^2)",
+        "Recurrence is T(n) = T(n-1) + O(n) and time complexity is O(n^2)", "Recurrence is T(n) = 2T(n/2) + O(n) and time complexity is O(n log n)", "Recurrence is T(n) = T(n/10) + T(9n/10) + O(n) and time complexity is O(n log n)",
+        "Correct. The worst case of QuickSort occurs when the picked pivot is always one of the corner elements in sorted array. In worst case, QuickSort recursively calls one subproblem with size 0 and other subproblem with size (n-1). So recurrence is T(n) = T(n-1) + T(0) + O(n) The above expression can be rewritten as T(n) = T(n-1) + O(n)",
+        "Incorrect. The worst case of QuickSort occurs when the picked pivot is always one of the corner elements in sorted array. In worst case, QuickSort recursively calls one subproblem with size 0 and other subproblem with size (n-1). So recurrence is T(n) = T(n-1) + T(0) + O(n) The above expression can be rewritten as T(n) = T(n-1) + O(n)");
+
     var num_of_questions = questions.length;
 
     $('#quiz_container').html('');
