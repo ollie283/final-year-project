@@ -149,23 +149,36 @@ $(document).ready(function () {
         current_question++;
     }
 
+    function show_results() {
+        // Function to display the results of the quiz
+
+        // clear the question container
+        $('#question_container').html('');
+
+        // output the results
+        $('#question_container').html('<h3>You have completed the quiz</h3><p>You correctly answered <strong>' + number_of_correct_answers + '</strong> of the ' + num_of_questions + ' questions in this quiz.</p>').hide().toggle(500);
+        $('#continue_btn').attr('value', 'Retry the Quiz');
+
+        // reset variables to facilitate retry
+        check_answer = 0;
+        current_question = 0;
+        number_of_correct_answers = 0;
+        return false;
+    }
+
     $('#question_form').submit(function () {
         // form submission logic
         // triggers the appropriate function
 
         if (check_answer == 0) {
             if (current_question >= num_of_questions) {
-                //function to display results;
+                show_results();
             } else {
                 write_question();
             }
         } else {
             check_answers();
         }
-
         return false;
-
     });
-
-
 });
