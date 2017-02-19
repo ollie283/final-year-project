@@ -8,38 +8,70 @@ $(document).ready(function () {
 
 
     // Quiz Questions
-    questions[0] = new Array("Quick sort is which of the following?", "4", "A easy-split hard-merge sorting algorithm",
-        "A easy-split easy-merge sorting algorithm", "A hard-split hard-merge sorting algorithm", "A hard-split easy-merge sorting algorithm",
+    questions[0] = new Array("Quick sort is which of the following?", "4",
+        "An easy-split hard-merge sorting algorithm",
+        "An easy-split easy-merge sorting algorithm",
+        "An hard-split hard-merge sorting algorithm",
+        "An hard-split easy-merge sorting algorithm",
         "Correct. Quick Sort uses the hard-split easy-merge approach.", "Incorrect. Quick Sort uses the hard-split easy-merge approach.");
 
-    questions[1] = new Array("Which of the following is TRUE relating to the time complexity of the Insertion Sort algorithm when used to sort a list of size n?", "4", "It is O(n log n) in all cases.",
-        "It is O(n^2) in all cases.", "It is O(n log n) on average but O(n^2) in the worst case.", "It is O(n) in the best case but O(n^2) in the worst case.",
+    questions[1] = new Array("Which of the following is TRUE relating to the time complexity of the Insertion Sort algorithm when used to sort a list of size n?", "4",
+        "It is O(n log n) in all cases.",
+        "It is O(n^2) in all cases.",
+        "It is O(n log n) on average but O(n^2) in the worst case.",
+        "It is O(n) in the best case but O(n^2) in the worst case.",
         "Correct. Insertion Sort is O(n) in the best case but O(n^2) in the average and worst case.", "Incorrect. Insertion Sort is O(n) in the best case but O(n^2) in the average and worst case.");
 
-    questions[2] = new Array("Who invented the Quick Sort Algorithm in 1962?", "2", "Primrose", "Hoare", "Stark", "Blair", "Correct. The Quick Sort Algorithm was invented by Hoare in 1962.",
-        "Incorrect. The Quick Sort Algorithm was invented by Hoare in 1962.");
+    questions[2] = new Array("Who invented the Quick Sort Algorithm in 1962?", "2",
+        "Primrose",
+        "Hoare",
+        "Stark",
+        "Blair",
+        "Correct. The Quick Sort Algorithm was invented by Hoare in 1962.", "Incorrect. The Quick Sort Algorithm was invented by Hoare in 1962.");
 
     questions[3] = new Array("Assume that we use Bubble Sort to sort n distinct elements in ascending order. When does the best case of Bubble Sort occur?", "2",
-        "There is no best case for Bubble Sort. It always takes O(n*n) time", "When elements are sorted in ascending order", "When elements are sorted in descending order", "When elements are not sorted by any order",
+        "There is no best case for Bubble Sort. It always takes O(n*n) time",
+        "When elements are sorted in ascending order",
+        "When elements are sorted in descending order",
+        "When elements are not sorted by any order",
         "Correct. When the list is already sorted (best-case), the complexity of bubble sort is only O(n).", "Incorrect. When the list is already sorted (best-case), the complexity of bubble sort is only O(n).");
 
     questions[4] = new Array("Which of the following is TRUE relating to the time complexity of the Quick Sort algorithm when used to sort a list of size n?", "3",
-        "It is O(n log n) in all cases.", "It is O(n^2) in all cases.", "It is O(n log n) on average but O(n^2) in the worst case.", "It is O(n) in the best case but O(n^2) in the worst case.",
+        "It is O(n log n) in all cases.",
+        "It is O(n^2) in all cases.",
+        "It is O(n log n) on average but O(n^2) in the worst case.",
+        "It is O(n) in the best case but O(n^2) in the worst case.",
         "Correct. Quick Sort is O(n log n) on average but O(n^2) in the worst case.", "Incorrect. Quick Sort is O(n log n) on average but O(n^2) in the worst case.");
 
-    questions[5] = new Array("The auxiliary space of insertion sort is O(1), what does O(1) mean?", "4", "The memory (space) required to process the data is not constant.", "It takes only 1 kb of memory.",
-        "It is the speed at which the elements are traversed.", "It means the amount of extra memory Insertion Sort consumes doesn't depend on the input. The algorithm should use the same amount of memory for all inputs.",
-        "Correct. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.",
-        "Incorrect. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.");
+    questions[5] = new Array("The auxiliary space of insertion sort is O(1), what does O(1) mean?", "4",
+        "The memory (space) required to process the data is not constant.",
+        "It takes only 1 kb of memory.",
+        "It is the speed at which the elements are traversed.",
+        "It means the amount of extra memory Insertion Sort consumes doesn't depend on the input. The algorithm should use the same amount of memory for all inputs.",
+        "Correct. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.", "Incorrect. The term O(1) states that the space required by the insertion sort is constant i.e., space required doesn't depend on input.");
 
-    questions[6] = new Array("What is recurrence for worst case of QuickSort and what is the time complexity in Worst case?", "2", "Recurrence is T(n) = T(n-2) + O(n) and time complexity is O(n^2)",
-        "Recurrence is T(n) = T(n-1) + O(n) and time complexity is O(n^2)", "Recurrence is T(n) = 2T(n/2) + O(n) and time complexity is O(n log n)", "Recurrence is T(n) = T(n/10) + T(9n/10) + O(n) and time complexity is O(n log n)",
+    questions[6] = new Array("What is recurrence for worst case of QuickSort and what is the time complexity in Worst case?", "2",
+        "Recurrence is T(n) = T(n-2) + O(n) and time complexity is O(n^2)",
+        "Recurrence is T(n) = T(n-1) + O(n) and time complexity is O(n^2)",
+        "Recurrence is T(n) = 2T(n/2) + O(n) and time complexity is O(n log n)",
+        "Recurrence is T(n) = T(n/10) + T(9n/10) + O(n) and time complexity is O(n log n)",
         "Correct. The worst case of QuickSort occurs when the picked pivot is always one of the corner elements in sorted array. In worst case, QuickSort recursively calls one subproblem with size 0 and other subproblem with size (n-1). So recurrence is T(n) = T(n-1) + T(0) + O(n) The above expression can be rewritten as T(n) = T(n-1) + O(n)",
         "Incorrect. The worst case of QuickSort occurs when the picked pivot is always one of the corner elements in sorted array. In worst case, QuickSort recursively calls one subproblem with size 0 and other subproblem with size (n-1). So recurrence is T(n) = T(n-1) + T(0) + O(n) The above expression can be rewritten as T(n) = T(n-1) + O(n)");
 
-    questions[7] = new Array("What is the best time complexity of bubble sort?", "4", "O(n log n)", "O(n^2)", "O(n log n)^2", "O(n)",
+    questions[7] = new Array("What is the best time complexity of bubble sort?", "4",
+        "O(n log n)",
+        "O(n^2)",
+        "O(n log n)^2",
+        "O(n)",
         "Correct. The bubble sort is at its best if the input data is sorted. i.e. If the input data is sorted in the same order as expected output. This can be achieved by using one boolean variable. The boolean variable is used to check whether the values are swapped at least once in the inner loop.",
         "Incorrect. The bubble sort is at its best if the input data is sorted. i.e. If the input data is sorted in the same order as expected output. This can be achieved by using one boolean variable. The boolean variable is used to check whether the values are swapped at least once in the inner loop.");
+
+    questions[8] = new Array("Insertion sort is which of the following?", "1",
+        "An easy-split hard-merge sorting algorithm",
+        "An easy-split easy-merge sorting algorithm",
+        "An hard-split hard-merge sorting algorithm",
+        "An hard-split easy-merge sorting algorithm",
+        "Correct. Insertion Sort uses the easy-split hard-merge approach.", "Incorrect. Insertion Sort uses the easy-split hard-merge approach.");
 
     var num_of_questions = questions.length;
 
