@@ -73,6 +73,13 @@ $(document).ready(function () {
         "An hard-split easy-merge sorting algorithm",
         "Correct. Insertion Sort uses the easy-split hard-merge approach.", "Incorrect. Insertion Sort uses the easy-split hard-merge approach.");
 
+    questions[9] = new Array("Which of the following algorithms is NOT suitable for large data sets?", "3",
+        "Insertion Sort",
+        "Roulette Sort",
+        "Bubble Sort",
+        "Quick Sort",
+        "Correct. Bubble sort is not suitable for large data sets as its average and worst case complexity are of Ο(n2) where n is the number of items.", "Incorrect. Bubble sort is not suitable for large data sets as its average and worst case complexity are of Ο(n2) where n is the number of items.");
+
     var num_of_questions = questions.length;
 
     $('#quiz_container').html('');
