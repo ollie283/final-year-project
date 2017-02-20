@@ -1,6 +1,10 @@
 /* CSS Document */
 
 /* Top navigation bar */
+#tools{
+    text-align:right;
+}
+
 header{
     padding-top:5px;
     margin-bottom:5px;
