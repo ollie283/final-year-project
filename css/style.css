@@ -5,6 +5,15 @@
     text-align:right;
 }
 
+.supporting_code_control {
+    display: inline-block;
+    padding: 2px 2px 2px 10px;
+    border-radius: 4px;
+    border: 1px solid #6F6F6F;
+    background-color: #6F6F6F;
+    color: #fff;
+}
+
 header{
     padding-top:5px;
     margin-bottom:5px;
