@@ -20,4 +20,26 @@ $().ready(function () {
         $("#tools a[class='btn btn-default btn-sm']").attr('class','btn btn-default btn-xs');
 
     }
+    // START Function to show/hide text component and toggle button display
+    //////////////////////////////////////////////////////////////////
+    $('#show-hide-code').click(function(event){
+        event.preventDefault();
+        $('#code-component').toggle('slow',function(){
+            if($(this).is(':visible')){
+                $('#show-hide-code').tooltip('hide').html('<span class="glyphicon glyphicon-eye-close"></span>');
+                $('#show-hide-code').attr('data-original-title','Hide Supporting Code');
+
+            } else {
+                $('#show-hide-code').tooltip('hide').html('<span class="glyphicon glyphicon-eye-open"></span>');
+                $('#show-hide-code').attr('data-original-title','Show Supporting Code');
+            }
+        });
+        $(this).tooltip('hide');
+        return(false);
+    });
+    //////////////////////////////////////////////////////////////////
+    // END Function to show/hide text component and toggle button display
+
+    // Trigger Tooltips
+    $('[data-toggle="tooltip"]').tooltip();
 });
