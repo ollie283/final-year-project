@@ -20,7 +20,7 @@ $().ready(function () {
         $("#tools a[class='btn btn-default btn-sm']").attr('class','btn btn-default btn-xs');
 
     }
-    // START Function to show/hide text component and toggle button display
+    // START Function to show/hide code component and toggle button display
     //////////////////////////////////////////////////////////////////
     $('#show-hide-code').click(function(event){
         event.preventDefault();
@@ -42,4 +42,13 @@ $().ready(function () {
 
     // Trigger Tooltips
     $('[data-toggle="tooltip"]').tooltip();
+
+    if($('#code-component').length){
+        //double column
+    }else{
+        //single column
+        $('#show-hide-code').attr('class','btn btn-default btn-xs disabled');
+        $('#supporting_text_tools').attr('class','supporting_code_control opacity50');
+    }
+
 });
