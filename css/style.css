@@ -111,6 +111,11 @@ footer ul{
     padding:0;
     list-style:none;
 }
+
+.opacity50{
+    opacity:0.5;
+}
+
 @media(max-width:767px){
     header{
         display:none;
