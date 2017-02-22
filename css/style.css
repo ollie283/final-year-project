@@ -5,6 +5,15 @@
     text-align:right;
 }
 
+.text_control{
+    display:inline-block;
+    padding:2px 2px 2px 10px;
+    border-radius:4px;
+    border:1px solid #6F6F6F;
+    background-color:#6F6F6F;
+    color:#fff;
+}
+
 .supporting_code_control {
     display: inline-block;
     padding: 2px 2px 2px 10px;
@@ -112,7 +121,7 @@ footer ul{
         padding:2px;
         text-align:center;
         float:none!important;
-        position:fixed;right:0;left:0;z-index:1030;/*top:20px;*/
+        position:fixed;right:0;left:0;z-index:1030;
     }
     #tools span.tool_text{
         display:none;
@@ -124,10 +133,6 @@ footer ul{
         font-size:180%;
         font-weight:bold;
         text-align:center;
-        /*background-color:#333;
-        color:#fff;
-        font-size:110%;
-        position:fixed;right:0;left:0;top:0;z-index:1020;*/
     }
     #small_screen_menu{
         list-style:none;
