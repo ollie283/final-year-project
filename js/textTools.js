@@ -40,9 +40,15 @@ $().ready(function () {
     //////////////////////////////////////////////////////////////////
     // END Function to show/hide text component and toggle button display
 
+    // START small screen nav drop down menu
+    $('#toggle_ss_nav').click(function(){
+        $("span",this).toggleClass("glyphicon-menu-hamburger");
+    });
+
     // Trigger Tooltips
     $('[data-toggle="tooltip"]').tooltip();
 
+    //Disable show/hide code button if no code component on page
     if($('#code-component').length){
         //double column
     }else{
