@@ -70,7 +70,6 @@ nav#main_nav ul li.alert-info{
 /* Main content text container */
 article{
   clear:both;
-  padding-top:10px;
   border:2px solid #3276B1;
   border-bottom:none;
   border-radius:10px 10px 0 0 ;
