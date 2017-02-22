@@ -14,4 +14,10 @@ $().ready(function () {
 
     $('header:first').after(toolbar_buttons);
 
+    if($(window).width() < 768){
+        // Position tool tip to bottom when small screen
+        $("a[data-placement='top']").attr('data-placement','bottom');
+        $("#tools a[class='btn btn-default btn-sm']").attr('class','btn btn-default btn-xs');
+
+    }
 });
