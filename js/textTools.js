@@ -21,26 +21,37 @@ $().ready(function () {
 
     }
     // START Function to show/hide code component and toggle button display
-    //////////////////////////////////////////////////////////////////
     $('#show-hide-code').click(function(event){
         event.preventDefault();
         $('#code-component').toggle('slow',function(){
             if($(this).is(':visible')){
                 $('#show-hide-code').tooltip('hide').html('<span class="glyphicon glyphicon-eye-close"></span>');
                 $('#show-hide-code').attr('data-original-title','Hide Supporting Code');
-
+                localStorage.removeItem("hide_code");
             } else {
                 $('#show-hide-code').tooltip('hide').html('<span class="glyphicon glyphicon-eye-open"></span>');
                 $('#show-hide-code').attr('data-original-title','Show Supporting Code');
+                localStorage["hide_code"] = 'hide';
             }
         });
         $(this).tooltip('hide');
         return(false);
     });
-    //////////////////////////////////////////////////////////////////
     // END Function to show/hide text component and toggle button display
 
-    // START small screen nav drop down menu
+    // Begin web storage of data
+    if (localStorage["hide_code"] == null) {
+        // Display alert test to show code is being displayed
+        // alert ("code being revealed");
+    }else{
+        // Display alert test to show code is being hidden
+        // alert ("text being hidden");
+        $('#show-hide-code').html('<span class="glyphicon glyphicon-eye-open"></span>');
+        $('#code-component').hide();
+
+    }
+
+    // Small screen nav drop down menu
     $('#toggle_ss_nav').click(function(){
         $("span",this).toggleClass("glyphicon-menu-hamburger");
     });
@@ -48,7 +59,7 @@ $().ready(function () {
     // Trigger Tooltips
     $('[data-toggle="tooltip"]').tooltip();
 
-    //Disable show/hide code button if no code component on page
+    // Disable show/hide code button if no code component on page
     if($('#code-component').length){
         //double column
     }else{
