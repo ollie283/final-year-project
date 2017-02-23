@@ -29,7 +29,8 @@
 <div class="container" id="main_container">
     <!-- Top Nav-Bar -->
     <header class="clearfix" role="banner">
-        <img src="img/essex.png" alt="University of Essex" width="144" height="59" id="university_logo" class="pull-right">
+        <img src="img/essex.png" alt="University of Essex" width="144" height="59" id="university_logo"
+             class="pull-right">
         <p class="rlo_title">Data Structures & Algorithms</p>
     </header>
     <nav class="nav nav-pills hidden-xs" role="navigation" id="main_nav">
@@ -68,7 +69,8 @@
     <!-- Renders drop-down menu for smaller screen resolutions -->
     <div class="visible-xs-block" id="small_screen_menu_container">
         <p class="rlo_title">Data Structures & Algorithms</p>
-        <p><a class="btn btn-primary btn-block" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="toggle_ss_nav">
+        <p><a class="btn btn-primary btn-block" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+              aria-controls="collapseExample" id="toggle_ss_nav">
             Toggle Navigation <span class="glyphicon glyphicon-remove glyphicon-menu-hamburger"
                                     aria-hidden="true"></span></a>
         </p>
@@ -104,27 +106,44 @@
             <div class="row">
                 <div class="col-md-6" id="text-component">
 
-                    <p>Sorting is one of the oldest and most well studied problems in computing. For most general internal sorting applications, an insertion sort, bubble sort, or quicksort is the method of choice. The decision regarding which to use depends on the size of the input and on the underlying environment.</p>
+                    <p>Sorting is one of the oldest and most well studied problems in computing. For most general
+                        internal sorting applications, an insertion sort, bubble sort, or quicksort is the method of
+                        choice. The decision regarding which to use depends on the size of the input and on the
+                        underlying environment.</p>
 
                     <h3>Divide & Conquer</h3>
 
                     <p>We can apply the principle of <a href="#" data-toggle="modal" data-target="#gloss_divide">divide
-                        & conquer</a> to the problem of sorting a collection of objects. If the collection is small, sorting can be performed trivially. Otherwise we split the collection into two smaller collections and sort these separately. This will produce two sorted lists which must then be merged to produce the final result. We express the divide and conquer approach to sorting a list in pseudo-code on the right hand slide.
+                        & conquer</a> to the problem of sorting a collection of objects. If the collection is small,
+                        sorting can be performed trivially. Otherwise we split the collection into two smaller
+                        collections and sort these separately. This will produce two sorted lists which must then be
+                        merged to produce the final result. We express the divide and conquer approach to sorting a list
+                        in pseudo-code on the right hand slide.
                     </p>
 
-                    <p>A number of different sorting algorithms can be obtained by using different techniques for splitting the list into two smaller lists. </p>
+                    <p>A number of different sorting algorithms can be obtained by using different techniques for
+                        splitting the list into two smaller lists. </p>
 
-                    <p>In the <font color="red"><b><i>easy-split hard-merge</i></b></font> approach we make the splitting as simple as possible – most of the work will then be done in merging the sorted lists.</p>
+                    <p>In the <font color="red"><b><i>easy-split hard-merge</i></b></font> approach we make the
+                        splitting as simple as possible – most of the work will then be done in merging the sorted
+                        lists.</p>
 
-                    <p>In the <font color="red"><b><i>hard-split easy-merge</i></b></font> approach we split the list into small elements and large elements so that every object in the sorted list <code><b>s1</b></code> will be smaller than any object in
+                    <p>In the <font color="red"><b><i>hard-split easy-merge</i></b></font> approach we split the list
+                        into small elements and large elements so that every object in the sorted list
+                        <code><b>s1</b></code> will be smaller than any object in
                         <code><b>s2</b></code> - merging then simply involves the concatenation of the two sorted lists
                     </p>
 
                 </div>
 
                 <div class="col-md-6" id="rightText-component">
-                    <p>In both approaches we can choose to split a list containing <i>n</i> elements into two smaller lists of (approximately) equal size or one list of size <i>n</i>-1 and one list of size 1. The former approach will give O(
-                        <i>n</i> log <i>n</i>) time as long as the splitting and merging can be done in O(<i>n</i>) time. The latter approach has the advantage that the sorting of the list of size 1 is trivial so only one recursive call is needed (and it will be possible to rewrite the programs using a loop instead of recursion).</p>
+                    <p>In both approaches we can choose to split a list containing <i>n</i> elements into two smaller
+                        lists of (approximately) equal size or one list of size <i>n</i>-1 and one list of size 1. The
+                        former approach will give O(
+                        <i>n</i> log <i>n</i>) time as long as the splitting and merging can be done in O(<i>n</i>)
+                        time. The latter approach has the advantage that the sorting of the list of size 1 is trivial so
+                        only one recursive call is needed (and it will be possible to rewrite the programs using a loop
+                        instead of recursion).</p>
                 </div>
 
                 <!-- START code column -->
@@ -172,7 +191,8 @@
     <!-- Footer -->
     <footer role="contentinfo">
         <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33.3" aria-valuemin="0" aria-valuemax="100" style="width: 33.3%">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33.3" aria-valuemin="0"
+                 aria-valuemax="100" style="width: 33.3%">
                 <span class="sr-only">33.3% Complete</span>
             </div>
         </div>
@@ -205,7 +225,8 @@
                 <h3 class="modal-title" id="gloss_divide_label">Divide & Conquer</h3>
             </div>
             <div class="modal-body">
-                <p>The principle of divide and conquer states that a large problem should be broken down into two or more smaller problems to be solved separately before combining their solutions.</p>
+                <p>The principle of divide and conquer states that a large problem should be broken down into two or
+                    more smaller problems to be solved separately before combining their solutions.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
