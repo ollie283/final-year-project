@@ -112,8 +112,16 @@ footer ul{
     list-style:none;
 }
 
+/* Used if no code component */
 .opacity50{
     opacity:0.5;
+}
+
+/* Used for Algorithms in Action */
+canvas {
+    border: 1px dashed #888888;
+    width: 100%;
+    height: auto;
 }
 
 @media(max-width:767px){
