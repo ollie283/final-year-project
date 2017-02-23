@@ -169,4 +169,8 @@ footer ul{
     footer{
         text-align:center;
     }
+    #algorithm_buttons .btn{
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
 }
