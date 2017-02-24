@@ -17,7 +17,7 @@ $().ready(function () {
     if ($(window).width() < 768) {
         // Position tool tip to bottom when small screen
         $("a[data-placement='top']").attr('data-placement', 'bottom');
-        $("#textTools a[class='btn btn-default btn-sm']").attr('class', 'btn btn-default btn-xs');
+        $("#tools a[class='btn btn-default btn-sm']").attr('class', 'btn btn-default btn-xs');
 
     }
     // START Function to show/hide code component and toggle button display
