@@ -13,9 +13,16 @@
  * Algorithms In Action Canvas *
  *******************************/
 function AlgorithmsInAction(canvasID, size) {
+    this.canvasID = canvasID;
+    this.setupCanvas();
 
 }
 
+AlgorithmsInAction.prototype.setupCanvas = function() {
+    this.canvas = document.getElementById(this.canvasID);
+    this.ctx = this.canvas.getContext('2d');
+    this.ctx.imageSmoothingEnabled = false;
+};
 
 /****************
  * Main Program *
