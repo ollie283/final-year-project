@@ -24,6 +24,14 @@ AlgorithmsInAction.prototype.setupCanvas = function() {
     this.ctx.imageSmoothingEnabled = false;
 };
 
+AlgorithmsInAction.prototype.getCanvasWidth = function() {
+    return this.canvas.width;
+};
+
+AlgorithmsInAction.prototype.getCanvasHeight = function() {
+    return this.canvas.height;
+};
+
 /****************
  * Main Program *
  ****************/
