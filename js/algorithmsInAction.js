@@ -14,8 +14,10 @@
  *******************************/
 function AlgorithmsInAction(canvasID, size) {
     this.canvasID = canvasID;
+    this.arraySize = size;
     this.setupCanvas();
-
+    this.populateBars();
+    this.visualizeBars();
 }
 
 AlgorithmsInAction.prototype.setupCanvas = function() {
@@ -30,6 +32,32 @@ AlgorithmsInAction.prototype.getCanvasWidth = function() {
 
 AlgorithmsInAction.prototype.getCanvasHeight = function() {
     return this.canvas.height;
+};
+
+AlgorithmsInAction.prototype.visualizeBars = function() {
+    var size = this.array.length;
+    var canvasWidth = this.getCanvasWidth();
+    var canvasHeight = this.getCanvasHeight();
+    var widthRatio = canvasWidth / size;
+    var heightRatio = canvasHeight / size;
+
+    // Fill the canvas with bars
+    for (var i = 0; i < size; i++) {
+        var value = this.array[i];
+        var barHeight = value * heightRatio;
+        this.ctx.fillStyle = 'red';
+        this.ctx.fillRect(i * widthRatio, canvasHeight - barHeight, widthRatio, barHeight);
+    }
+    this.ctx.save();
+};
+
+AlgorithmsInAction.prototype.populateBars = function() {
+    this.array = [];
+    var length = this.arraySize;
+    for (var i = 1; i <= length; i++) {
+        this.array.push(i);
+    }
+    this.visualizeBars();
 };
 
 /****************
