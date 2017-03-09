@@ -35,12 +35,17 @@ AlgorithmsInAction.prototype.getCanvasHeight = function() {
     return this.canvas.height;
 };
 
+AlgorithmsInAction.prototype.clearCanvas = function() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+};
+
 AlgorithmsInAction.prototype.visualizeBars = function() {
     var size = this.array.length;
     var canvasWidth = this.getCanvasWidth();
     var canvasHeight = this.getCanvasHeight();
     var widthRatio = canvasWidth / size;
     var heightRatio = canvasHeight / size;
+    this.clearCanvas();
 
     // Fill the canvas with bars
     for (var i = 0; i < size; i++) {
@@ -61,6 +66,10 @@ AlgorithmsInAction.prototype.populateBars = function() {
     }
     this.visualizeBars();
 };
+
+/**********************
+ * Sorting Algorithms *
+ **********************/
 
 // Shuffle code adapted from http://jsfromhell.com/array/shuffle
 AlgorithmsInAction.prototype.shuffleArray = function() {
