@@ -18,6 +18,7 @@ function AlgorithmsInAction(canvasID, size) {
     this.setupCanvas();
     this.populateBars();
     this.visualizeBars();
+    this.shuffleArray();
 }
 
 AlgorithmsInAction.prototype.setupCanvas = function() {
@@ -58,6 +59,13 @@ AlgorithmsInAction.prototype.populateBars = function() {
     for (var i = 1; i <= length; i++) {
         this.array.push(i);
     }
+    this.visualizeBars();
+};
+
+// Shuffle code adapted from http://jsfromhell.com/array/shuffle
+AlgorithmsInAction.prototype.shuffleArray = function() {
+    var a = this.array;
+    for (var j, x, i = a.length; i; j = Math.floor(Math.random() * i), x = a[--i], a[i] = a[j], a[j] = x) {}
     this.visualizeBars();
 };
 
