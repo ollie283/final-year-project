@@ -19,6 +19,7 @@ function AlgorithmsInAction(canvasID, size) {
     this.populateBars();
     this.visualizeBars();
     this.shuffleArray();
+    this.enableButtonHandler();
 }
 
 AlgorithmsInAction.prototype.setupCanvas = function() {
@@ -70,6 +71,9 @@ AlgorithmsInAction.prototype.populateBars = function() {
 /**********************
  * Sorting Algorithms *
  **********************/
+AlgorithmsInAction.prototype.enableButtonHandler = function() {
+    document.getElementById('sort-shuffle').onclick = this.shuffleArray.bind(this);
+};
 
 // Shuffle code adapted from http://jsfromhell.com/array/shuffle
 AlgorithmsInAction.prototype.shuffleArray = function() {
