@@ -45,7 +45,8 @@ AlgorithmsInAction.prototype.visualizeBars = function() {
     for (var i = 0; i < size; i++) {
         var value = this.array[i];
         var barHeight = value * heightRatio;
-        this.ctx.fillStyle = 'red';
+        var colour = i + 10 + i * 2;
+        this.ctx.fillStyle = 'rgb(' + colour + ',' + colour + ',' + colour + ')';
         this.ctx.fillRect(i * widthRatio, canvasHeight - barHeight, widthRatio, barHeight);
     }
     this.ctx.save();
