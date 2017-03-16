@@ -73,6 +73,7 @@ AlgorithmsInAction.prototype.populateBars = function() {
  **********************/
 AlgorithmsInAction.prototype.enableButtonHandler = function() {
     document.getElementById('sort-shuffle').onclick = this.shuffleArray.bind(this);
+    document.getElementById('sort-bubble').onclick = this.bubbleSort().bind(this);
 };
 
 // Shuffle code adapted from http://jsfromhell.com/array/shuffle
@@ -90,9 +91,25 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
     var i = 0;
 
     var bubbleSortProcess = function() {
+        if (i < length) {
+            if (array[i] > array[i+1]) {
+                var temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+                swap = true;
+            }
+            i++;
+            this.visualizeBars();
 
+        }
+        else if (swap) {
+            swap = false;
+            length--;
+            i = 0;
+            bubbleSortProcess();
+        }
     };
-
+    bubbleSortProcess();
 };
 
 /****************
