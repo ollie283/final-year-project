@@ -13,6 +13,7 @@
  * Algorithms In Action Canvas *
  *******************************/
 function AlgorithmsInAction(canvasID, size) {
+    this.timeout = 25;
     this.canvasID = canvasID;
     this.arraySize = size;
     this.setupCanvas();
@@ -73,7 +74,7 @@ AlgorithmsInAction.prototype.populateBars = function() {
  **********************/
 AlgorithmsInAction.prototype.enableButtonHandler = function() {
     document.getElementById('sort-shuffle').onclick = this.shuffleArray.bind(this);
-    document.getElementById('sort-bubble').onclick = this.bubbleSort().bind(this);
+    document.getElementById('sort-bubble').onclick = this.bubbleSort.bind(this);
 };
 
 // Shuffle code adapted from http://jsfromhell.com/array/shuffle
@@ -88,6 +89,7 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
     var array = this.array;
     var length = array.length;
     var swap = true;
+    var ref = this;
     var i = 0;
 
     var bubbleSortProcess = function() {
@@ -99,8 +101,8 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
                 swap = true;
             }
             i++;
-            this.visualizeBars();
-
+            ref.visualizeBars();
+            window.setTimeout(bubbleSortProcess, ref.timeout);
         }
         else if (swap) {
             swap = false;
