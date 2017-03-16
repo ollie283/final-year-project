@@ -84,6 +84,14 @@ AlgorithmsInAction.prototype.shuffleArray = function() {
 
 //Bubble Sort
 AlgorithmsInAction.prototype.bubbleSort = function() {
+    var array = this.array;
+    var length = array.length;
+    var swap = true;
+    var i = 0;
+
+    var bubbleSortProcess = function() {
+
+    };
 
 };
 
