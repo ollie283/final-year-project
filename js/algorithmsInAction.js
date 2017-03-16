@@ -82,6 +82,11 @@ AlgorithmsInAction.prototype.shuffleArray = function() {
     this.visualizeBars();
 };
 
+//Bubble Sort
+AlgorithmsInAction.prototype.bubbleSort = function() {
+
+};
+
 /****************
  * Main Program *
  ****************/
