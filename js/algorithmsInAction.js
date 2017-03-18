@@ -98,7 +98,7 @@ AlgorithmsInAction.prototype.shuffleArray = function() {
     this.timeout = 100;
 };
 
-//Bubble Sort
+// Bubble Sort
 AlgorithmsInAction.prototype.bubbleSort = function() {
     var array = this.array;
     var length = array.length;
@@ -129,6 +129,15 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
         }
     };
     bubbleSortProcess();
+};
+
+// Insertion Sort
+AlgorithmsInAction.prototype.insertionSort = function () {
+    var array = this.array;
+    var length = array.length;
+    var ref = this;
+    var i = 1;
+    
 };
 
 /****************
