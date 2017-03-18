@@ -13,7 +13,7 @@
  * Algorithms In Action Canvas *
  *******************************/
 function AlgorithmsInAction(canvasID, size) {
-    this.timeout = 25;
+    this.timeout = 100;
     this.canvasID = canvasID;
     this.arraySize = size;
     this.setupCanvas();
@@ -49,7 +49,7 @@ AlgorithmsInAction.prototype.visualizeBars = function() {
     var heightRatio = canvasHeight / size;
     this.clearCanvas();
 
-    // Fill the canvas with bars
+    // Fill the canvas with bars (canvas width)
     for (var i = 0; i < size; i++) {
         var value = this.array[i];
         var barHeight = value * heightRatio;
@@ -63,6 +63,7 @@ AlgorithmsInAction.prototype.visualizeBars = function() {
 AlgorithmsInAction.prototype.populateBars = function() {
     this.array = [];
     var length = this.arraySize;
+    // Fill canvas with number of bars
     for (var i = 1; i <= length; i++) {
         this.array.push(i);
     }
@@ -75,6 +76,18 @@ AlgorithmsInAction.prototype.populateBars = function() {
 AlgorithmsInAction.prototype.enableButtonHandler = function() {
     document.getElementById('sort-shuffle').onclick = this.shuffleArray.bind(this);
     document.getElementById('sort-bubble').onclick = this.bubbleSort.bind(this);
+
+    document.getElementById('sort-increase').onclick = this.increaseSpeed.bind(this);
+    document.getElementById('sort-decrease').onclick = this.decreaseSpeed.bind(this);
+
+};
+
+AlgorithmsInAction.prototype.increaseSpeed = function () {
+    this.timeout -= 25;
+};
+
+AlgorithmsInAction.prototype.decreaseSpeed = function () {
+    this.timeout += 25;
 };
 
 // Shuffle code adapted from http://jsfromhell.com/array/shuffle
@@ -82,6 +95,7 @@ AlgorithmsInAction.prototype.shuffleArray = function() {
     var a = this.array;
     for (var j, x, i = a.length; i; j = Math.floor(Math.random() * i), x = a[--i], a[i] = a[j], a[j] = x) {}
     this.visualizeBars();
+    this.timeout = 100;
 };
 
 //Bubble Sort
@@ -93,11 +107,13 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
     var i = 0;
 
     var bubbleSortProcess = function() {
+        // i < indexOfLastSortedElement
         if (i < length) {
-            if (array[i] > array[i+1]) {
+            // If leftElement > rightElement THEN swap
+            if (array[i] > array[i + 1]) {
                 var temp = array[i];
-                array[i] = array[i+1];
-                array[i+1] = temp;
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
                 swap = true;
             }
             i++;
@@ -106,6 +122,7 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
         }
         else if (swap) {
             swap = false;
+            // Decrease length of array as element is in sorted position
             length--;
             i = 0;
             bubbleSortProcess();
