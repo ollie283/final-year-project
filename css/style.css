@@ -134,6 +134,10 @@ canvas {
     height: auto;
 }
 
+#algorithm_buttons .btn {
+    margin-bottom: 5px;
+}
+
 @media (max-width: 767px) {
     header {
         display: none;
@@ -201,10 +205,5 @@ canvas {
 
     footer {
         text-align: center;
-    }
-
-    #algorithm_buttons .btn {
-        margin-bottom: 5px;
-        margin-right: 5px;
     }
 }
