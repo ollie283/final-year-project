@@ -76,6 +76,8 @@ AlgorithmsInAction.prototype.populateBars = function() {
 AlgorithmsInAction.prototype.enableButtonHandler = function() {
     document.getElementById('sort-shuffle').onclick = this.shuffleArray.bind(this);
     document.getElementById('sort-bubble').onclick = this.bubbleSort.bind(this);
+    document.getElementById('sort-insertion').onclick = this.insertionSort.bind(this);
+
 
     document.getElementById('sort-increase').onclick = this.increaseSpeed.bind(this);
     document.getElementById('sort-decrease').onclick = this.decreaseSpeed.bind(this);
@@ -104,6 +106,7 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
     var length = array.length;
     var swap = true;
     var ref = this;
+    var temp;
     var i = 0;
 
     var bubbleSortProcess = function() {
@@ -111,7 +114,7 @@ AlgorithmsInAction.prototype.bubbleSort = function() {
         if (i < length) {
             // If leftElement > rightElement THEN swap
             if (array[i] > array[i + 1]) {
-                var temp = array[i];
+                temp = array[i];
                 array[i] = array[i + 1];
                 array[i + 1] = temp;
                 swap = true;
@@ -137,7 +140,25 @@ AlgorithmsInAction.prototype.insertionSort = function () {
     var length = array.length;
     var ref = this;
     var i = 1;
-    
+    var temp;
+
+    var loop = function(){
+        if (i < length){
+            var j = i;
+            var insertionSortProcess = function () {
+                if (j > 0 && array[j - 1] > array[j]){
+                    temp = array[j];
+                    array[j] = array[j-1];
+                    array[j - 1] = temp;
+                    j--;
+                }
+
+            };
+        }
+
+    };
+    loop;
+
 };
 
 /****************
