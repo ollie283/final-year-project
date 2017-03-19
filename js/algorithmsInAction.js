@@ -78,7 +78,6 @@ AlgorithmsInAction.prototype.enableButtonHandler = function() {
     document.getElementById('sort-bubble').onclick = this.bubbleSort.bind(this);
     document.getElementById('sort-insertion').onclick = this.insertionSort.bind(this);
 
-
     document.getElementById('sort-increase').onclick = this.increaseSpeed.bind(this);
     document.getElementById('sort-decrease').onclick = this.decreaseSpeed.bind(this);
 
@@ -145,20 +144,25 @@ AlgorithmsInAction.prototype.insertionSort = function () {
     var loop = function(){
         if (i < length){
             var j = i;
+
             var insertionSortProcess = function () {
                 if (j > 0 && array[j - 1] > array[j]){
                     temp = array[j];
-                    array[j] = array[j-1];
+                    array[j] = array[j - 1];
                     array[j - 1] = temp;
                     j--;
+                    ref.visualizeBars();
+                    window.setTimeout(insertionSortProcess, ref.timeout);
                 }
-
+                else {
+                    i++;
+                    loop();
+                }
             };
+            insertionSortProcess();
         }
-
     };
-    loop;
-
+    loop();
 };
 
 /****************
