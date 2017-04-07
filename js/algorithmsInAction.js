@@ -77,6 +77,7 @@ AlgorithmsInAction.prototype.enableButtonHandler = function() {
     document.getElementById('sort-shuffle').onclick = this.shuffleArray.bind(this);
     document.getElementById('sort-bubble').onclick = this.bubbleSort.bind(this);
     document.getElementById('sort-insertion').onclick = this.insertionSort.bind(this);
+    document.getElementById('sort-quick').onclick = this.quickSort.bind(this);
 
     document.getElementById('sort-increase').onclick = this.increaseSpeed.bind(this);
     document.getElementById('sort-decrease').onclick = this.decreaseSpeed.bind(this);
