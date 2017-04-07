@@ -165,6 +165,10 @@ AlgorithmsInAction.prototype.insertionSort = function () {
     loop();
 };
 
+AlgorithmsInAction.prototype.quickSort = function() {
+
+};
+
 /****************
  * Main Program *
  ****************/
