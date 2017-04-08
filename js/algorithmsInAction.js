@@ -100,6 +100,11 @@ AlgorithmsInAction.prototype.shuffleArray = function() {
     this.timeout = 100;
 };
 
+// Used by the quickSort function to generate and return a random pivot value
+AlgorithmsInAction.prototype.randomInt = function (min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+};
+
 // Bubble Sort
 AlgorithmsInAction.prototype.bubbleSort = function() {
     var array = this.array;
@@ -166,9 +171,18 @@ AlgorithmsInAction.prototype.insertionSort = function () {
     loop();
 };
 
+// Quick Sort
 AlgorithmsInAction.prototype.quickSort = function() {
+    var array = this.array;
+    var ref = this;
 
-};
+    var quickSortProcess = function (left, right) {
+        if (left < right) {
+            // Partition left and right
+            var pivotIndex = ref.randomInt(left, right);
+            var pivotValue = array[pivotIndex];
+        }
+        ;
 
 /****************
  * Main Program *
