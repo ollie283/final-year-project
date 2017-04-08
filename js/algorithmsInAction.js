@@ -181,8 +181,19 @@ AlgorithmsInAction.prototype.quickSort = function() {
             // Partition left and right
             var pivotIndex = ref.randomInt(left, right);
             var pivotValue = array[pivotIndex];
+            array[pivotIndex] = array[right];
+            array[right] = pivotValue;
+
+            var partitionLoop = function () {
+
+            };
         }
-        ;
+        else {
+
+        }
+    };
+
+};
 
 /****************
  * Main Program *
