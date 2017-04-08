@@ -199,10 +199,18 @@ AlgorithmsInAction.prototype.quickSort = function() {
                     window.setTimeout(partitionLoop, ref.timeout);
                 }
                 else {
-
+                    array[right] = array[current];
+                    array[current] = pivotValue;
+                    quickSortProcess(left, current - 1);
+                    quickSortProcess(current + 1, right);
+                }
+                ref.visualizeBars();
+                i++;
+            };
+            partitionLoop();
         }
     };
-
+    quickSortProcess(0, array.length - 1);
 };
 
 /****************
