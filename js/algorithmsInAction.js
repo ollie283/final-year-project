@@ -181,14 +181,24 @@ AlgorithmsInAction.prototype.quickSort = function() {
             // Partition left and right
             var pivotIndex = ref.randomInt(left, right);
             var pivotValue = array[pivotIndex];
+            var current = left;
+            var i = left;
             array[pivotIndex] = array[right];
             array[right] = pivotValue;
 
             var partitionLoop = function () {
-
-            };
-        }
-        else {
+                if (i < right) {
+                    if (array[i] < pivotValue) {
+                        ref.visualizeBars();
+                        var temp = array[i];
+                        array[i] = array[current];
+                        array[current] = temp;
+                        current++;
+                    }
+                    ref.visualizeBars();
+                    window.setTimeout(partitionLoop, ref.timeout);
+                }
+                else {
 
         }
     };
